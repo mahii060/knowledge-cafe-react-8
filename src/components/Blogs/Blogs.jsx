@@ -1,8 +1,10 @@
+/* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/jsx-key */
 import React, { useEffect, useState } from 'react';
 import Blog from '../Blog/Blog';
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const Blogs = () => {
     const [blogs, setBlogs] = useState([])
     const [readTime, setReadTime] = useState(0);
@@ -11,7 +13,11 @@ const Blogs = () => {
 
 
     const handleBookmark = (title) => {
+        if (bookmarks.includes(title)) {
+            toast.warn(`"${title}"  already exists!`)
+        }
         setBookmark([title, ...bookmarks])
+
         const previoustBookmarkQnty = bookmarkQnty;
         const totalBookmarkQnty = previoustBookmarkQnty + 1;
         setBookmarkQnty(totalBookmarkQnty)
@@ -22,6 +28,8 @@ const Blogs = () => {
         const totalTime = previousTime + parseInt(read_time)
         setReadTime(totalTime)
     }
+
+    // const notify = () => toast("Wow so easy!");
 
     useEffect(() => {
         fetch('data.json')
