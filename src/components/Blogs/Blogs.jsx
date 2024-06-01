@@ -11,7 +11,7 @@ const Blogs = () => {
 
 
     const handleBookmark = (title) => {
-        setBookmark([...bookmarks, title])
+        setBookmark([title, ...bookmarks])
         const previoustBookmarkQnty = bookmarkQnty;
         const totalBookmarkQnty = previoustBookmarkQnty + 1;
         setBookmarkQnty(totalBookmarkQnty)
@@ -54,7 +54,6 @@ const Blogs = () => {
                                 {bookmark}
                             </h3>)
                     }
-                    {/* <h3 className='text-lg font-bold py-3 px-2 rounded-md my-4 mx-5 bg-white'>CSS Grid Layout: A Comprehensive Guide</h3> */}
                 </div>
             </div>
         </div>
