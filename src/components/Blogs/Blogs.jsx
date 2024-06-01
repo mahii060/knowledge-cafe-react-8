@@ -5,10 +5,14 @@ import Blog from '../Blog/Blog';
 
 const Blogs = () => {
     const [blogs, setBlogs] = useState([])
+    const [readTime, setReadTime] = useState(0)
 
 
-    const handleMarkAsRead = (read_time) => {
-        console.log('Mark as read', read_time)
+    const handleReadTime = (read_time) => {
+        const previousTime = readTime;
+        const totalTime = previousTime + parseInt(read_time)
+        console.log(totalTime)
+        setReadTime(totalTime)
     }
 
     useEffect(() => {
@@ -26,12 +30,12 @@ const Blogs = () => {
                         <Blog
                             key={blog.id}
                             blog={blog}
-                            handleMarkAsRead={handleMarkAsRead}
+                            handleReadTime={handleReadTime}
                         ></Blog>)
                 }
             </div>
             <div className="cart-container lg:col-span-1">
-                <h2 className='text-2xl font-bold text-violet-700 border border-violet-700 bg-violet-100 text-center py-5 rounded-md'>Spent Time on read: 177 min</h2>
+                <h2 className='text-2xl font-bold text-violet-700 border border-violet-700 bg-violet-100 text-center py-5 rounded-md'>Spent Time on read: {readTime} min</h2>
                 <div className='my-3 bg-gray-200 rounded-md py-5'>
                     <h2 className='text-2xl font-bold text-center'>Bookmarked blogs: 8</h2>
                     <h3 className='text-lg font-bold py-3 px-2 rounded-md my-4 mx-5 bg-white'>Mastering JavaScript: Tips and Tricks for Intermediate Developers</h3>

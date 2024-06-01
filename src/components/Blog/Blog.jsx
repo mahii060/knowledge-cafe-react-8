@@ -3,7 +3,7 @@
 /* eslint-disable react/jsx-key */
 import React from 'react';
 
-const Blog = ({ blog, handleMarkAsRead }) => {
+const Blog = ({ blog, handleReadTime }) => {
     const { author, author_image, read_time, tags, thumbnail, title, writing_date } = blog
     return (
         <div>
@@ -40,7 +40,7 @@ const Blog = ({ blog, handleMarkAsRead }) => {
                                 </span>)
                         }
                     </p>
-                    <a onClick={() => handleMarkAsRead(read_time)} className='text-violet-700 font-semibold underline cursor-pointer'>Mark as read</a>
+                    <a onClick={() => handleReadTime(read_time)} className='text-violet-700 font-semibold underline cursor-pointer'>Mark as read</a>
                 </div>
             </div>
         </div>
