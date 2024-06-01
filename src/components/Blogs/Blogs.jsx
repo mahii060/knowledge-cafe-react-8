@@ -5,13 +5,18 @@ import Blog from '../Blog/Blog';
 
 const Blogs = () => {
     const [blogs, setBlogs] = useState([])
-    const [readTime, setReadTime] = useState(0)
+    const [readTime, setReadTime] = useState(0);
+    const [bookmarks, setBookmark] = useState([]);
+    const [bookmarkQnty, setBookmarkQnty] = useState(0)
 
+
+    const handleBookmark = (title) => {
+        setBookmark([...bookmarks, title])
+    }
 
     const handleReadTime = (read_time) => {
         const previousTime = readTime;
         const totalTime = previousTime + parseInt(read_time)
-        console.log(totalTime)
         setReadTime(totalTime)
     }
 
@@ -31,6 +36,7 @@ const Blogs = () => {
                             key={blog.id}
                             blog={blog}
                             handleReadTime={handleReadTime}
+                            handleBookmark={handleBookmark}
                         ></Blog>)
                 }
             </div>
@@ -38,8 +44,14 @@ const Blogs = () => {
                 <h2 className='text-2xl font-bold text-violet-700 border border-violet-700 bg-violet-100 text-center py-5 rounded-md'>Spent Time on read: {readTime} min</h2>
                 <div className='my-3 bg-gray-200 rounded-md py-5'>
                     <h2 className='text-2xl font-bold text-center'>Bookmarked blogs: 8</h2>
-                    <h3 className='text-lg font-bold py-3 px-2 rounded-md my-4 mx-5 bg-white'>Mastering JavaScript: Tips and Tricks for Intermediate Developers</h3>
-                    <h3 className='text-lg font-bold py-3 px-2 rounded-md my-4 mx-5 bg-white'>CSS Grid Layout: A Comprehensive Guide</h3>
+                    {
+                        bookmarks.map((bookmark, index) =>
+                            <h3 className='text-lg font-bold py-3
+                        px-2 rounded-md my-4 mx-5 bg-white' key={index}>
+                                {bookmark}
+                            </h3>)
+                    }
+                    {/* <h3 className='text-lg font-bold py-3 px-2 rounded-md my-4 mx-5 bg-white'>CSS Grid Layout: A Comprehensive Guide</h3> */}
                 </div>
             </div>
         </div>
