@@ -3,7 +3,7 @@
 /* eslint-disable react/jsx-key */
 import React from 'react';
 
-const Blog = ({ blog }) => {
+const Blog = ({ blog, handleMarkAsRead }) => {
     const { author, author_image, read_time, tags, thumbnail, title, writing_date } = blog
     return (
         <div>
@@ -19,7 +19,7 @@ const Blog = ({ blog }) => {
                             </div>
                         </div>
                         <div className='flex gap-2'>
-                            <p className='text-gray-500'>{read_time}</p>
+                            <p className='text-gray-500'>{read_time} min read</p>
                             <p>
                                 <span>
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6 cursor-pointer">
@@ -40,7 +40,7 @@ const Blog = ({ blog }) => {
                                 </span>)
                         }
                     </p>
-                    <a className='text-violet-700 font-semibold underline' href="">Mark as read</a>
+                    <a onClick={() => handleMarkAsRead(read_time)} className='text-violet-700 font-semibold underline cursor-pointer'>Mark as read</a>
                 </div>
             </div>
         </div>

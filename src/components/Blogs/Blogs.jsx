@@ -6,6 +6,11 @@ import Blog from '../Blog/Blog';
 const Blogs = () => {
     const [blogs, setBlogs] = useState([])
 
+
+    const handleMarkAsRead = (read_time) => {
+        console.log('Mark as read', read_time)
+    }
+
     useEffect(() => {
         fetch('data.json')
             .then(res => res.json())
@@ -21,6 +26,7 @@ const Blogs = () => {
                         <Blog
                             key={blog.id}
                             blog={blog}
+                            handleMarkAsRead={handleMarkAsRead}
                         ></Blog>)
                 }
             </div>

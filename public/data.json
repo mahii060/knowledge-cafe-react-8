@@ -3,7 +3,7 @@
         "id": "1",
         "author": "David Walsh",
         "author_image": "https://blog.codersrank.io/wp-content/uploads/2021/05/dawid-walsh.jpg",
-        "read_time": "8 min read",
+        "read_time": "8",
         "tags": [
             "JavaScript",
             "Web Development",
@@ -17,7 +17,7 @@
         "id": "2",
         "author": "Piotr Kowalski",
         "author_image": "https://blog.codersrank.io/wp-content/uploads/2021/05/piotr-kowalski.jpg",
-        "read_time": "10 min read",
+        "read_time": "10",
         "tags": [
             "CSS",
             "WebDesign",
@@ -31,7 +31,7 @@
         "id": "3",
         "author": "Szymon Piłkowski",
         "author_image": "https://blog.codersrank.io/wp-content/uploads/2021/05/szymon-pilkowski.jpg",
-        "read_time": "12 min read",
+        "read_time": "12",
         "tags": [
             "Programming",
             "Career",
@@ -45,7 +45,7 @@
         "id": "4",
         "author": "Ben Nadel",
         "author_image": "https://blog.codersrank.io/wp-content/uploads/2021/05/ben-nadel.jpg",
-        "read_time": "9 min read",
+        "read_time": "9",
         "tags": [
             "WebDevelopment",
             "BestPractices"
@@ -58,7 +58,7 @@
         "id": "5",
         "author": "Shawn Wang",
         "author_image": "https://blog.codersrank.io/wp-content/uploads/2021/05/shawn-wang.jpg",
-        "read_time": "7 min read",
+        "read_time": "7",
         "tags": [
             "JavaScript",
             "Frameworks",
@@ -72,7 +72,7 @@
         "id": "6",
         "author": "Tania Rascia",
         "author_image": "https://blog.codersrank.io/wp-content/uploads/2021/05/tania-rascia.jpg",
-        "read_time": "11 min read",
+        "read_time": "11",
         "tags": [
             "CSS",
             "WebDesign",
