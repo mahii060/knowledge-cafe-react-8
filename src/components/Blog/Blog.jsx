@@ -40,7 +40,7 @@ const Blog = ({ blog, handleReadTime, handleBookmark }) => {
                                 </span>)
                         }
                     </p>
-                    <a onClick={() => handleReadTime(read_time)} className='text-violet-700 font-semibold underline cursor-pointer'>Mark as read</a>
+                    <a onClick={() => handleReadTime(read_time)} className='text-violet-800 hover:text-violet-600 font-semibold underline cursor-pointer'>Mark as read</a>
                 </div>
             </div>
         </div>
