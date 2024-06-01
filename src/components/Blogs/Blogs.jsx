@@ -12,6 +12,9 @@ const Blogs = () => {
 
     const handleBookmark = (title) => {
         setBookmark([...bookmarks, title])
+        const previoustBookmarkQnty = bookmarkQnty;
+        const totalBookmarkQnty = previoustBookmarkQnty + 1;
+        setBookmarkQnty(totalBookmarkQnty)
     }
 
     const handleReadTime = (read_time) => {
@@ -43,7 +46,7 @@ const Blogs = () => {
             <div className="cart-container lg:col-span-1">
                 <h2 className='text-2xl font-bold text-violet-700 border border-violet-700 bg-violet-100 text-center py-5 rounded-md'>Spent Time on read: {readTime} min</h2>
                 <div className='my-3 bg-gray-200 rounded-md py-5'>
-                    <h2 className='text-2xl font-bold text-center'>Bookmarked blogs: 8</h2>
+                    <h2 className='text-2xl font-bold text-center'>Bookmarked blogs: {bookmarkQnty}</h2>
                     {
                         bookmarks.map((bookmark, index) =>
                             <h3 className='text-lg font-bold py-3
